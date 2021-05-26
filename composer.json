@@ -1,0 +1,28 @@
+{
+    "name": "rep98/slug",
+    "description": "Generator of slug for php",
+    "keywords": [
+        "slug",
+        "php",
+        "generator"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Pérez",
+            "email": "delfinmundo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SV\\SLUG\\": "src/",
+            "Tests\\": "tests/"
+        },
+        "files":[
+            "src/SlugHelper.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
