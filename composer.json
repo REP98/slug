@@ -23,6 +23,5 @@
             "src/SlugHelper.php"
         ]
     },
-    "minimum-stability": "dev",
     "require": {}
 }
