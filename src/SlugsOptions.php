@@ -3,7 +3,7 @@
  * SlugsOptions
  */
 
-$SlugsOptions = [
+return [
 	"delimiter" => '-',
 	"limit" => -1,
 	"lowercase" => true,

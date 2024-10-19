@@ -1,5 +1,6 @@
 {
     "name": "rep98/slug",
+    "version": "2.0.0",
     "description": "Generator of slug for php",
     "keywords": [
         "slug",

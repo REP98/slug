@@ -1,21 +1,27 @@
 # SV Slug
+
 Generador de Slug php
 
 ## Instalación
 
-<p>Puede instalarlo con composer usando </p>
-`composer require rep98/slug`
-<p>Para su uso ejecute es muy sencillo solo invoque la función `SvSlug` y listo</p>
+Puede instalarlo con composer usando
+
+```shell
+composer require rep98/slug
+```
+
+Para su uso ejecute es muy sencillo solo invoque la función `SvSlug` y listo
 
 ```php
 $str = "El niño juega carro con su pelota";
 echo SvSlug($str);
 /* Return -->
- *	el-nino-juega-carro-con-su-pelota
+ *  el-nino-juega-carro-con-su-pelota
  */
 ```
 
 ## Configuración
+
 Es simple de usar y configurar cuenta con pocas opciones
 
 ```php
@@ -41,4 +47,3 @@ $SlugsOptions = [
 |  unique        | Se utiliza para generar slug únicos si su sistema usa  | (Bool) true |
 |                | Base de datos no use esta opcion ya que usa SqlLite    |             |
 |                | para almacenar y verificar si es único o no            |             |
-

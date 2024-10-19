@@ -21,20 +21,20 @@ class SqlLite
 		}
 	}
 
-	private function insert($slug)
+	private function insert(string $slug)
 	{
 		$SlugExists = $this->db->query("SELECT count(slug) as nslugs FROM slugs WHERE slug LIKE '$slug%'");
 		$count = $SlugExists->fetchColumn(0);
 		if( $count !== '0' ) {
 			$slug = $slug.$count;
-			$addSlugs = $this->db->exec("INSERT INTO slugs (slug) VALUES ('$slug')");
+			$this->db->exec("INSERT INTO slugs (slug) VALUES ('$slug')");
 		} else {
-			$addSlugs = $this->db->exec("INSERT INTO slugs (slug) VALUES ('$slug')");
+			$this->db->exec("INSERT INTO slugs (slug) VALUES ('$slug')");
 		}
 		return $slug;
 	}
 
-	public function getSlugUnique($slug) {
+	public function getSlugUnique( string $slug) {
 		return $this->insert($slug);
 	}
 }

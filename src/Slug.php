@@ -9,6 +9,7 @@ use SV\SLUG\SqlLite;
 class Slug
 {
 	private $SlugsOptions = [];
+	
 	private $char_map = [
 		// Latin
 		'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A', 'Æ' => 'AE', 'Ç' => 'C', 
@@ -80,11 +81,12 @@ class Slug
 
 	function __construct($options = [])
 	{
-		include __DIR__.'/SlugsOptions.php';
+		$SlugsOptions = include __DIR__.'/SlugsOptions.php';
 		$this->SlugsOptions = array_merge($SlugsOptions, $options);
 	}
 
-	public function generator($str) {
+	public function generator($str): string 
+	{
 		if(!empty($str)){
 			$str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
 			$str = preg_replace(array_keys($this->SlugsOptions['replacements']), $this->SlugsOptions['replacements'], $str);
@@ -112,7 +114,7 @@ class Slug
 
 		return "";
 	}
-	public function transliterates($str)
+	public function transliterates($str): string
 	{
 		if($this->SlugsOptions['transliterate']) {
 			$str = str_replace(array_keys($this->char_map), $this->char_map, $str);
@@ -120,7 +122,7 @@ class Slug
 		return $str;
 	}
 
-	public function uniqueSlug($slug)
+	public function uniqueSlug($slug): string
 	{
 		$db = new SqlLite();
 		return $db->getSlugUnique($slug);
